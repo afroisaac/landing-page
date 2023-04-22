@@ -130,16 +130,13 @@ scrollTop.addEventListener('click', () => {
 navSetup();
        
 // Scroll to section on link click
- 
 menu.addEventListener('click', (e) => {
     e.preventDefault();
     scrollToSection(document.getElementById(e.target.dataset.section));
 }, false);
 
 
-
 // Set sections as active
-
 window.addEventListener('scroll', (e) => {
     if(scrollTimer !== null){
         clearTimeout(scrollTimer);
@@ -149,8 +146,10 @@ window.addEventListener('scroll', (e) => {
     hideHeader();
  }, false);
 
- window.addEventListener('mousemove', (e) => {
-    if(e.clientY < window.innerHeight/2 && page_header.classList.contains("hidden")){
+ //Re-instates hidden fixed navbar
+ document.body.addEventListener('mousemove', (e) => {
+    //console.log(e.offsetY);
+    if(e.offsetY < window.innerHeight/2 && page_header.classList.contains("hidden")){
         page_header.classList.remove("hidden");
         page_header.classList.add("show");
     }
