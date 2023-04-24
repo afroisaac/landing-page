@@ -1,0 +1,29 @@
+@import url("color.css");
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="email"]{
+    padding: 12px 10px;
+
+    border-radius: 4px;
+    background-color: var(--white);
+    outline:1px solid var(--dark);
+}
+
+input:focus{
+    background-color: var(--secondary-color) ;
+}
+
+@media only screen and (min-width: 35em){
+    form{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    input[type="email"]{
+        width: 300px;
+    }
+}

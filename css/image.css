@@ -1,0 +1,6 @@
+.tour__image, .event__image{
+    width: 100%;
+    height: auto;
+    border-radius: 0.8em;
+    z-index: -4;
+}

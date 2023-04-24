@@ -6,7 +6,7 @@
 
 
 .hero .hero__image{
-    border-radius: 8px;
+   border-radius: 8px;
 }
 
 @media only screen and (min-width: 35em){
@@ -16,5 +16,10 @@
 
     .hero .hero__heading, .hero .hero__image{
         width: 50%;
+    }
+
+    .hero .hero__image{
+        border-top-left-radius: 0;
+        border-bottom-left-radius:0;
     }
 }
