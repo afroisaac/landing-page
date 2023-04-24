@@ -5,6 +5,7 @@ This project is part of Udacity's Frontend Developer Nanodegree programme sponso
     - Hero
     - Booking
     - Event
+    - Tour
     - Subscription
 
 ## Quickstart/Demo
