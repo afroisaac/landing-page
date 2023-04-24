@@ -40,12 +40,20 @@ let scrollTimer = null;
  * 
 */
 
+/**
+* @description Handles smooth scrolling
+* @param {HTMLElement} element - Section of the page to scroll into view
+*/
 const scrollToSection = (element) => {
     element.scrollIntoView({
         behavior: 'smooth'
     });
 };  
 
+/**
+* @description Checks if an element is currently in the viewport
+* @param {HTMLElement} element - Section of the page
+*/
 const isElementInViewport = (element) => {
     const rect = element.getBoundingClientRect();
     if (
@@ -60,7 +68,9 @@ const isElementInViewport = (element) => {
     return false;  
 };
 
-// show and hide scroll to top  
+/**
+* @description Hides or shows the scroll to top element 
+*/  
 const toggleScrollToTop = () => {
     if (window.pageYOffset > window.innerHeight) {
         scrollTop.classList.remove('hidden');
@@ -71,7 +81,9 @@ const toggleScrollToTop = () => {
     }
 }
 
-//Hide the page header when not scrolling
+/**
+* @description Hides the fixed navbar 
+*/
 const hideHeaderOnScrollStop = () => {
     scrollTimer = setTimeout(() => {
         if(!isElementInViewport(hero) && !page_header.classList.contains("hidden")){
