@@ -28,7 +28,7 @@ const page_header = document.querySelector(".page__header");
 const hero = document.querySelector(".main__hero");
 const sections = document.querySelectorAll('section');
 const scrollTop = document.querySelector('.page__scroll-top');
-const  menu = document.querySelector(".navbar__menu");
+const menu = document.querySelector(".navbar__menu");
 
 let navList = document.querySelector('#navbar__list');
 let scrollTimer = null;
@@ -64,13 +64,13 @@ const toggleScrollToTop = () => {
     if (window.pageYOffset > window.innerHeight) {
         scrollTop.classList.remove('hidden');
         scrollTop.classList.add('show');
-      } else {
+    } else {
         scrollTop.classList.remove('show');
         scrollTop.classList.add('hidden');
-      }
+    }
 }
 
-const hideHeader = () => {
+const hideHeaderOnScrollStop = () => {
     scrollTimer = setTimeout(() => {
         if(!isElementInViewport(hero) && !page_header.classList.contains("hidden")){
             page_header.classList.remove("show");
@@ -78,7 +78,6 @@ const hideHeader = () => {
         }
     }, 2000);
 }
-
 
 
 /**
@@ -100,9 +99,8 @@ const navSetup = () => {
 };
 
 // Add class 'active' to section when near top of viewport
-
 const highlightInView = () => {
-    sections.forEach(section => {
+    for(let section of sections) {
         if(isElementInViewport(section)){
             section.classList.add(ACTIVE_CLASS);
             document.querySelector(`[data-section=${section.id}]`).classList.add(ACTIVE_CLASS);
@@ -110,7 +108,7 @@ const highlightInView = () => {
             section.classList.remove(ACTIVE_CLASS);
             document.querySelector(`[data-section=${section.id}]`).classList.remove(ACTIVE_CLASS);
         }
-    });
+    }
 };
 
 // Scroll to anchor ID using scrollTO event
@@ -130,26 +128,26 @@ scrollTop.addEventListener('click', () => {
 navSetup();
        
 // Scroll to section on link click
-menu.addEventListener('click', (e) => {
-    e.preventDefault();
-    scrollToSection(document.getElementById(e.target.dataset.section));
+menu.addEventListener('click', (event) => {
+    event.preventDefault();
+    scrollToSection(document.getElementById(event.target.dataset.section));
 }, false);
 
-
 // Set sections as active
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', (event) => {
+    page_header.classList.remove("hidden");          //make the menu visible while scrolling
+    page_header.classList.add("show");
     if(scrollTimer !== null){
         clearTimeout(scrollTimer);
         highlightInView();
         toggleScrollToTop();
     }
-    hideHeader();
+    hideHeaderOnScrollStop();
  }, false);
 
  //Re-instates hidden fixed navbar
- document.body.addEventListener('mousemove', (e) => {
-    //console.log(e.offsetY);
-    if(e.offsetY < window.innerHeight/2 && page_header.classList.contains("hidden")){
+ document.body.addEventListener('mousemove', () => {
+    if(page_header.classList.contains("hidden")){
         page_header.classList.remove("hidden");
         page_header.classList.add("show");
     }

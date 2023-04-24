@@ -1,13 +1,38 @@
-# Landing Page Project
+## Landing Page Project
+
+This project is part of Udacity's Frontend Developer Nanodegree programme sponsored by Bertelsmann. This landing page has the following 4 major sections:
+
+    - Hero
+    - Booking
+    - Event
+    - Subscription
+
+## Quickstart/Demo
+
+The project can be viewed live here, no download required [landing page demo](https://afroisaac.github.io/landing-page/) 
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+- [Landing Page Project](#landing-page-project)
+- [Quickstart/Demo](#quickstartdemo)
+- [Table of content](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Development](#development)
 
-## Instructions
+## Installation
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This project requires no technical installation, just clone the repository and you are all set.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Usage
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+Open the project folder, double-click on the index.html file, then click each navigation item to see the scroll effect and you can also use the scrollbar. Watch the sections get highlighted as they come into focus as well as the corrsponding menu item. The back to top button slides in from the right once the page scrolls a certain distance.
+
+## Development
+
+Credits to the following:
+
+    - Udacity Team for the starter code
+    - Fontawesome for icons
+    - Unsplash for images
+

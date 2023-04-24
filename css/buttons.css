@@ -1,0 +1,30 @@
+@import url("colors.css");
+.btn{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-primary{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
+}
+
+.btn-secondary{
+    background-color: transparent;
+    color: var(--secondary-color);
+    outline: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    outline: 2px solid var(--primary-color);
+}
