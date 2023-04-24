@@ -9,7 +9,7 @@
    border-radius: 8px;
 }
 
-@media only screen and (min-width: 64em){
+@media only screen and (min-width: 80em){
     .hero{
         flex-direction: row;
     }
