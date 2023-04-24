@@ -59,7 +59,8 @@ const isElementInViewport = (element) => {
     // The element is not visible in the viewport
     return false;  
 };
-  
+
+// show and hide scroll to top  
 const toggleScrollToTop = () => {
     if (window.pageYOffset > window.innerHeight) {
         scrollTop.classList.remove('hidden');
@@ -70,6 +71,7 @@ const toggleScrollToTop = () => {
     }
 }
 
+//Hide the page header when not scrolling
 const hideHeaderOnScrollStop = () => {
     scrollTimer = setTimeout(() => {
         if(!isElementInViewport(hero) && !page_header.classList.contains("hidden")){
